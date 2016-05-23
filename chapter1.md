@@ -3,7 +3,7 @@ title       : Introduction to Cluster Analysis
 description : This course will teach you the basics of cluster analysis.
 attachments :
 
---- type:NormalExercise lang:r xp:100 skills:1 key:211e1551ba
+--- type:NormalExercise lang:r xp:100 skills:1 
 ## Hierarchical Clustering
 
 One of the most basic forms of cluster analysis is the hierarchical cluster. Hierarchical clustering measures disimilarity. Disimilarity can be thought of as distance from one observation to another. 
@@ -22,6 +22,7 @@ A dataset with a selection of cars, `mtcars`, is available in the workspace.
 *** =hint
 - Use `str()` for the first instruction.
 - Did you assign the matrix to `cars`?
+- Did you calculate the distance? 
 - Did you preform `hclust()` on the right data?
 - Did you plot `h_clust`?
 
@@ -45,6 +46,7 @@ mtcars <- data(mtcars)
 
 
 # Calculate the distance
+
 
 # Perform a hierarchical cluster
 
@@ -105,36 +107,38 @@ test_error()
 success_msg("Good work!")
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:1839b51b1b
-## A really bad movie
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 
+## Quiz Time: Dissimilarity
 
-Have a look at the plot that showed up in the viewer to the right. Which type of movie has the worst rating assigned to it?
+How do we measure dissimilarity?
 
 *** =instructions
-- Adventure
-- Action
-- Animation
-- Comedy
-- TEST
+- Standard Deviations
+- RMSE
+- Variance
+- Distance
 
 *** =hint
-Have a look at the plot. Which color does the point with the lowest rating have?
+Have a look at the solution, what did we calculate from the matrix?
 
 *** =pre_exercise_code
 ```{r}
-library(dplyr)
-mtcars <- data("mtcars")
-# The pre exercise code runs code to initialize the user's workspace. You can use it for several things:
+# mtcars is available in your workspace
 
-# 1. Preload a dataset. The code below will read the csv that is stored at the URL's location.
-# The movies variable will be available in the user's console.
-movies <- read.csv("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/movies.csv")
+# Check out the structure of mtcars
+str(mtcars)
 
-# 2. Pre-load packages, so that users don't have to do this manually.
-library(ggplot2)
+# Create a new matrix called "cars"
+cars <- as.matrix(mtcars)
 
-# 3. Create a plot in the viewer, that students can check out while reading the exercise
-ggplot(movies, aes(x = runtime, y = rating, col = genre)) + geom_point()
+# Calculate the distance
+dist <- dist(cars)
+
+# Perform a hierarchical cluster
+h_clust <- hclust(dist)
+
+#Plot h_clust
+plot(h_clust)
 ```
 
 *** =sct
@@ -144,11 +148,11 @@ ggplot(movies, aes(x = runtime, y = rating, col = genre)) + geom_point()
 # testwhat R package
 
 msg_bad <- "That is not correct!"
-msg_success <- "Exactly! There seems to be a very bad action movie in the dataset."
+msg_success <- "Exactly! We calculate distance and use that as a measure of dissimilarity."
 
 # Use test_mc() to grade multiple choice exercises. 
 # Pass the correct option (Action, option 2 in the instructions) to correct.
 # Pass the feedback messages, both positive and negative, to feedback_msgs in the appropriate order.
-test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success, msg_bad, msg_bad)) 
+test_mc(correct = 4, feedback_msgs = c(msg_bad, msg_bad, msg_bad, msg_success)) 
 ```
 
