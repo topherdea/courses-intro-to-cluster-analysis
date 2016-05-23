@@ -79,18 +79,16 @@ plot(h_clust)
 # If it is not called, print something informative
 # If it is called, but called incorrectly, print something else
 
-test_function("plot", args = "h_clust")
+test_function("plot", args = "h_clust",
+              incorrect_msg = "You didn't call `plot(___)` with the correct argument, `h_clust`")
 
 test_function("str", args = "mtcars",
-              not_called_msg = "You didn't call `str()`!",
               incorrect_msg = "You didn't call `str(___)` with the correct argument, `mtcars`.")
 
 test_function("as.matrix", args ="mtcars",
-              not_called_msg = "You didn't call `as.matrix`",
               incorrect_msg = "You didn't call `as.matrix(___)` with the correct object.")
 
 test_function("hclust", args = "dist",
-              not_called_msg = "You didn't call `hclust`",
               incorrect_msg = "You didn't call `hclust` with the correct object.")
 
 
