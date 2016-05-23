@@ -15,8 +15,8 @@ A dataset with a selection of cars, `mtcars`, is available in the workspace.
 *** =instructions
 - View the structure of your data.
 - Convert the data set to matrix format with `as.matrix()`, assign it to the object `cars`.
-- Calculate the distance of the `cars` object with `dist()` and assign it to `dist`.
-- Use `hclust()` to preform your cluster of the `dist` data, assign it to `h_clust`.
+- Calculate the distance of the `cars` object with `dist()` and assign it to `distance`.
+- Use `hclust()` to preform your cluster of the `distance` data, assign it to `h_clust`.
 - Plot `h_clust`
 
 *** =hint
@@ -64,10 +64,10 @@ str(mtcars)
 cars <- as.matrix(mtcars)
 
 # Calculate the distance
-dist <- dist(cars)
+distance <- dist(cars)
 
 # Perform a hierarchical cluster
-h_clust <- hclust(dist)
+h_clust <- hclust(distance)
 
 #Plot h_clust
 plot(h_clust)
@@ -93,8 +93,8 @@ test_function("hclust", args = "dist",
 
 
 
-# Test the objeects 
-test_object("dist")
+# Test the objects 
+test_object("distance")
 test_object("cars")
 
 
