@@ -237,11 +237,11 @@ This graph was created using ggvis. Check out the course on ggvis!
 Which cluster has the best mileage in relation to it's displacement volume?
 
 *** =instructions
--1
--2
--3
--4
--5
+- 1
+- 2
+- 3
+- 4
+- 5
 
 *** =hint
 Look at the legend and the color of the dots!
