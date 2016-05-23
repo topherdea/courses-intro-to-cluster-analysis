@@ -209,13 +209,14 @@ cluster_cars <- data.frame(cars, fit$cluster)
 *** =sct
 ```{r}
 #First Instruction
-test_function("kmeans", c("x", "centers"))
+test_function("kmeans", args = c("x", "centers"),
+              incorrect_msg = "Did you call the correct object and number of clusters?")
 
 #Second Instruction
 test_student_typed("aggregate(cars, by=list(fit$cluster), FUN = mean)", 
                   not_typed_msg = "Something is wrong with `aggregate()`. Take another look at the instruction.")
                   
 #Third Instruction
-test_object("cluster_cars",
-            incorrect_msg = "Something is wrong with `cluster_cars`. Make sure you've assigned the correct value to the object.")
+test_function("data.frame", args = ),
+              incorrect_msg = "Did you call the correct object and number of clusters?")
 ```
