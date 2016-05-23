@@ -3,7 +3,7 @@ title       : Introduction to Cluster Analysis
 description : This course will teach you the basics of cluster analysis.
 attachments :
 
---- type:NormalExercise lang:r xp:100 skills:1 
+--- type:NormalExercise lang:r xp:100 skills:1  key:211e1551ba
 ## Hierarchical Clustering
 
 One of the most basic forms of cluster analysis is the hierarchical cluster. Hierarchical clustering measures disimilarity. Disimilarity can be thought of as distance from one observation to another. 
@@ -107,7 +107,7 @@ test_error()
 success_msg("Good work!")
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1  key:a6e6db2517
 ## Quiz Time: Dissimilarity
 
 How do we measure dissimilarity?
