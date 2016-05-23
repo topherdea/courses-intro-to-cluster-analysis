@@ -13,14 +13,17 @@ To execute a hierarchical cluster we will first change our data to matrix form, 
 A dataset with a selection of cars, `mtcars`, is available in the workspace.
 
 *** =instructions
+- View the structure of your data.
 - Convert the data set to matrix format with `as.matrix()`, assign it to the object `cars`.
 - Calculate the distance of the `cars` object with `dist()` and assign it to `dist`.
 - Use `hclust()` to preform your cluster of the `dist` data, assign it to `h_clust`.
+- Plot `h_clust`
 
 *** =hint
 - Use `str()` for the first instruction.
-- For the second instruction, you should use `...[movie_selection$Rating >= 5, ]`.
-- For the plot, use `plot(x = ..., y = ..., col = ...)`. 
+- Did you assign the matrix to `cars`?
+- Did you preform `hclust()` on the right data?
+- Did you plot h_clust?
 
 *** =pre_exercise_code
 ```{r}
@@ -39,25 +42,35 @@ mtcars <- data(mtcars)
 # Check out the structure of mtcars
 
 
-# Select movies that have a rating of 5 or higher: good_movies
+# Create a new matrix called "cars"
 
 
-# Plot Run (i.e. run time) on the x axis, Rating on the y axis, and set the color using Genre
+# Calculate the distance
+
+# Perform a hierarchical cluster
+
+#Plot h_clust
 
 ```
 
 *** =solution
 ```{r}
-# movie_selection is available in your workspace
+# mtcars is available in your workspace
 
-# Check out the structure of movie_selection
-str(movie_selection)
+# Check out the structure of mtcars
+str(mtcars)
 
-# Select movies that have a rating of 5 or higher: good_movies
-good_movies <- movie_selection[movie_selection$Rating >= 5, ]
+# Create a new matrix called "cars"
+cars <- as.matrix(mtcars)
 
-# Plot Run (i.e. run time) on the x axis, Rating on the y axis, and set the color using Genre
-plot(good_movies$Run, good_movies$Rating, col = good_movies$Genre)
+# Calculate the distance
+dist <- dist(cars)
+
+# Perform a hierarchical cluster
+h_clust <- hclust(dist)
+
+#Plot h_clust
+plot(h_clust)
 ```
 
 *** =sct
@@ -69,27 +82,25 @@ plot(good_movies$Run, good_movies$Rating, col = good_movies$Genre)
 # Test whether the function str is called with the correct argument, object
 # If it is not called, print something informative
 # If it is called, but called incorrectly, print something else
-test_function("str", args = "object",
+test_function("str", args = "mtcars",
               not_called_msg = "You didn't call `str()`!",
-              incorrect_msg = "You didn't call `str(object = ...)` with the correct argument, `object`.")
+              incorrect_msg = "You didn't call `str(___)` with the correct argument, `mtcars`.")
 
-# Test the object, good_movies
-# Notice that we didn't define any feedback here, this will cause automatically 
-# generated feedback to be given to the student in case of an incorrect submission
-test_object("good_movies")
+test_function("as.matrix", args ="mtcars",
+              not_called_msg = "You didn't call `as.matrix`",
+              incorrect_msg = "You didn't call `as.matrix(___)` with the correct object.")
 
-# Test whether the student correctly used plot()
-# Again, we use the automatically generated feedback here
-test_function("plot", args = "x")
-test_function("plot", args = "y")
-test_function("plot", args = "col")
+test_function("hclust", args = "dist",
+              not_called_msg = "You didn't call `hclust`",
+              incorrect_msg = "You didn't call `hclust` with the correct object.")
 
-# Alternativeley, you can use test_function() like this
-# test_function("plot", args = c("x", "y", "col"))
+test_function("plot", args = "h_clust")
 
-# It's always smart to include the following line of code at the end of your SCTs
-# It will check whether executing the student's code resulted in an error, 
-# and if so, will cause the exercise to fail
+# Test the objeects 
+test_object("dist")
+test_object("cars")
+
+
 test_error()
 
 # Final message the student will see upon completing the exercise
