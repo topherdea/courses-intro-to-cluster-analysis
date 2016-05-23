@@ -217,6 +217,6 @@ test_student_typed("aggregate(cars, by=list(fit$cluster), FUN = mean)",
                   not_typed_msg = "Something is wrong with `aggregate()`. Take another look at the instruction.")
                   
 #Third Instruction
-test_function("data.frame", args = "...",
+test_function("data.frame",
               incorrect_msg = "Did you call cars & fit$cluster?")
 ```
