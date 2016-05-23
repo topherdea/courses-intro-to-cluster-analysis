@@ -172,6 +172,7 @@ Creating these clusters is fairly easy and requires you to indicate how many clu
 
 *** =pre_exercise_code
 ```{r}
+set.seed(0)
 library(dplyr)
 data(mtcars)
 cars <- as.matrix(mtcars)
@@ -179,7 +180,6 @@ cars <- as.matrix(mtcars)
 
 *** =sample_code
 ```{r}
-set.seed(0)
 # The cars data is preloaded into your workspace.
 
 
@@ -210,8 +210,7 @@ cluster_cars <- data.frame(cars, fit$cluster)
 *** =sct
 ```{r}
 #First Instruction
-test_function("kmeans", args = c("x", "centers"),
-              incorrect_msg = "Did you call the correct object and number of clusters?")
+test_object("fit")
 
 #Second Instruction
 test_student_typed("aggregate(cars, by=list(fit$cluster), FUN = mean)", 
