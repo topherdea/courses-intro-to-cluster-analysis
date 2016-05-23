@@ -258,10 +258,6 @@ aggregate(cars, by=list(fit$cluster), FUN = mean)
 
 # Create a new data frame with the cars and fit data
 cluster_cars <- data.frame(cars, fit$cluster)
-```
-
-*** =pre_exercise_code
-```{r}
 cluster_cars %>% ggvis(~mpg, ~disp, fill = ~factor(fit.cluster)) %>% group_by(fit.cluster)
 ```
 
