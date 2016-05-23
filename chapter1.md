@@ -210,7 +210,7 @@ cluster_cars <- data.frame(cars, fit$cluster)
 ```{r}
 #First Instruction
 test_object("fit",
-            incorrect_msg = "Something is wrong with `fit`. Make sure you've assigned the correct value to the object."))
+            incorrect_msg = "Something is wrong with `fit`. Make sure you've assigned the correct value to the object.")
 
 #Second Instruction
 test_student_typed("aggregate(cars, by=list(fit$cluster), FUN = mean)", 
@@ -218,5 +218,5 @@ test_student_typed("aggregate(cars, by=list(fit$cluster), FUN = mean)",
                   
 #Third Instruction
 test_object("cluster_cars",
-            incorrect_msg = "Something is wrong with `cluster_cars`. Make sure you've assigned the correct value to the object."))
+            incorrect_msg = "Something is wrong with `cluster_cars`. Make sure you've assigned the correct value to the object.")
 ```
