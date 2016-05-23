@@ -51,6 +51,7 @@ mtcars <- data(mtcars)
 # Perform a hierarchical cluster
 
 # Plot h_clust
+
 ```
 
 *** =solution
@@ -82,7 +83,7 @@ plot(h_clust)
 test_function("plot", args = "x",
               incorrect_msg = "You didn't call `plot(___)` with the correct argument, `h_clust`")
 
-test_function("str", args = "x",
+test_function("str", args = "object",
               incorrect_msg = "You didn't call `str(___)` with the correct argument, `mtcars`.")
 
 test_function("as.matrix", args ="x",
