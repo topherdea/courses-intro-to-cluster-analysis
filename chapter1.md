@@ -78,6 +78,9 @@ plot(h_clust)
 # Test whether the function str is called with the correct argument, object
 # If it is not called, print something informative
 # If it is called, but called incorrectly, print something else
+
+test_function("plot", args = "h_clust")
+
 test_function("str", args = "mtcars",
               not_called_msg = "You didn't call `str()`!",
               incorrect_msg = "You didn't call `str(___)` with the correct argument, `mtcars`.")
@@ -90,7 +93,7 @@ test_function("hclust", args = "dist",
               not_called_msg = "You didn't call `hclust`",
               incorrect_msg = "You didn't call `hclust` with the correct object.")
 
-test_function("plot", args = "h_clust")
+
 
 # Test the objeects 
 test_object("dist")
@@ -207,5 +210,5 @@ cluster_cars <- data.frame(cars, fit$cluster)
 *** =sct
 ```{r}
 #First Instruction
-
+test
 ```
