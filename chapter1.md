@@ -50,7 +50,7 @@ mtcars <- data(mtcars)
 
 # Perform a hierarchical cluster
 
-#Plot h_clust
+# Plot h_clust
 ```
 
 *** =solution
@@ -69,7 +69,7 @@ distance <- dist(cars)
 # Perform a hierarchical cluster
 h_clust <- hclust(distance)
 
-#Plot h_clust
+# Plot h_clust
 plot(h_clust)
 ```
 
@@ -79,16 +79,16 @@ plot(h_clust)
 # If it is not called, print something informative
 # If it is called, but called incorrectly, print something else
 
-test_function("plot", args = "h_clust",
+test_function("plot", args = "x",
               incorrect_msg = "You didn't call `plot(___)` with the correct argument, `h_clust`")
 
-test_function("str", args = "mtcars",
+test_function("str", args = "object",
               incorrect_msg = "You didn't call `str(___)` with the correct argument, `mtcars`.")
 
-test_function("as.matrix", args ="mtcars",
+test_function("as.matrix", args ="x",
               incorrect_msg = "You didn't call `as.matrix(___)` with the correct object.")
 
-test_function("hclust", args = "dist",
+test_function("hclust", args = "d",
               incorrect_msg = "You didn't call `hclust` with the correct object.")
 
 
