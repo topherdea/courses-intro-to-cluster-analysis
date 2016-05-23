@@ -251,6 +251,8 @@ Look at the legend and the color of the dots!
 library(ggvis)
 library(dplyr)
 
+cars <- mtcars
+
 fit <- kmeans(cars, 5)
 
 # Aggregate your cars data by cluster fits
