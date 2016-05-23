@@ -209,8 +209,7 @@ cluster_cars <- data.frame(cars, fit$cluster)
 *** =sct
 ```{r}
 #First Instruction
-test_object("fit",
-            incorrect_msg = "Something is wrong with `fit`. Make sure you've assigned the correct value to the object.")
+test_function("kmeans", c("x", "centers"))
 
 #Second Instruction
 test_student_typed("aggregate(cars, by=list(fit$cluster), FUN = mean)", 
