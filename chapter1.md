@@ -219,4 +219,5 @@ test_student_typed("aggregate(cars, by=list(fit$cluster), FUN = mean)",
 #Third Instruction
 test_function("data.frame",
               incorrect_msg = "Did you call cars & fit$cluster?")
+test_object("clustercars")
 ```
