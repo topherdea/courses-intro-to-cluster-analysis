@@ -32,7 +32,6 @@ library(dplyr)
 
 # load mtcars:
 mtcars <- data(mtcars)
-
 ```
 
 *** =sample_code
@@ -50,7 +49,6 @@ mtcars <- data(mtcars)
 # Perform a hierarchical cluster
 
 #Plot h_clust
-
 ```
 
 *** =solution
