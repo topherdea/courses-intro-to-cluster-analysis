@@ -23,7 +23,7 @@ A dataset with a selection of cars, `mtcars`, is available in the workspace.
 - Use `str()` for the first instruction.
 - Did you assign the matrix to `cars`?
 - Did you preform `hclust()` on the right data?
-- Did you plot h_clust?
+- Did you plot `h_clust`?
 
 *** =pre_exercise_code
 ```{r}
