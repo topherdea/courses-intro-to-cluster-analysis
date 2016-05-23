@@ -155,4 +155,61 @@ msg_success <- "Exactly! We calculate distance and use that as a measure of diss
 # Pass the feedback messages, both positive and negative, to feedback_msgs in the appropriate order.
 test_mc(correct = 4, feedback_msgs = c(msg_bad, msg_bad, msg_bad, msg_success)) 
 ```
+--- type:NormalExercise lang:r xp:100 skills:1 
+## K-Means Cluster
 
+K-Means clustering is one of the most basic, and most used unsupervised algorithims. The main idea is to generate **k** number of clusters, or groups based on a mean center. We want each cluster to be as far from each other as possible. If clustered, we assume that each cluster is different from another. 
+
+Creating these clusters is fairly easy and requires you to indicate how many clusters you are searching for. K-means is performed using the `kmeans()`function. The function requires 2 arguments. The first argument passed is the matrix, and the second is the number (**k**) of clusters.
+
+*** =instructions
+- Preform a k-means cluster with 5 clusters and assign it to object `fit`.
+- Subset data by cluster with `aggregate()` function.
+- Create a new data frame with `cars` and `fit$cluster`, assign it to `cluster_cars`.
+
+*** =hint
+- Did you assign the correct number of clusters?
+- Did you provide the correct argument for `aggregate()`
+- Did you call the `data.frame()` with the correct arguments?
+
+*** =pre_exercise_code
+```{r}
+library(dplyr)
+data(mtcars)
+cars <- as.matrix(mtcars)
+```
+
+*** =sample_code
+```{r}
+# The cars data is preloaded into your workspace.
+
+
+# Preform your k-means cluster
+
+
+# Aggregate your cars data by cluster fits
+aggregate(___, by=list(fit$cluster), FUN = mean)
+
+# Create a new data frame with the cars and fit data
+```
+
+*** =solution
+```{r}
+# The cars data is preloaded into your workspace.
+
+
+# Preform your k-means cluster
+fit <- kmeans(cars, 5)
+
+# Aggregate your cars data by cluster fits
+aggregate(cars, by=list(fit$cluster), FUN = mean)
+
+# Create a new data frame with the cars and fit data
+cluster_cars <- data.frame(cars, fit$cluster)
+```
+
+*** =sct
+```{r}
+#First Instruction
+
+```
