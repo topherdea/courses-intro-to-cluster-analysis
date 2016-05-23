@@ -234,7 +234,7 @@ Take a look at your console, and try running the code.
 
 This graph was created using ggvis. Check out the course on ggvis!
 
-Which cluster has the best mileage in relation to it's displacement volume?
+Which cluster has the best mileage?
 
 *** =instructions
 - 1
@@ -272,5 +272,5 @@ msg_success <- "Wonderful! he 4th cluster has the best mileage."
 
 # Pass the correct option (Action, option 2 in the instructions) to correct.
 # Pass the feedback messages, both positive and negative, to feedback_msgs in the appropriate order.
-test_mc(correct = 4, feedback_msgs = c(msg_bad, msg_bad, msg_bad, msg_success, msg_bad)) 
+test_mc(correct = 5, feedback_msgs = c(msg_bad, msg_bad, msg_bad, msg_bad, msg_success)) 
 ```
