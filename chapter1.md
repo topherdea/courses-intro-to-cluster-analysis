@@ -220,4 +220,57 @@ test_student_typed("aggregate(cars, by=list(fit$cluster), FUN = mean)",
 test_function("data.frame",
               incorrect_msg = "Did you call cars & fit$cluster?")
 test_object("cluster_cars")
+
+test_error()
+
+# Final message the student will see upon completing the exercise
+success_msg("Good work!")
+```
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1
+##Understanding your cluster.
+
+Take a look at your console, and try running the code.
+
+This graph was created using ggvis. Check out the course on ggvis!
+
+Which cluster has the best mileage in relation to it's displacement volume?
+
+*** =instructions
+-1
+-2
+-3
+-4
+-5
+
+*** =hint
+Look at the legend and the color of the dots!
+
+*** =pre_exercise_code
+```{r}
+library(ggvis)
+library(dplyr)
+
+fit <- kmeans(cars, 5)
+
+# Aggregate your cars data by cluster fits
+aggregate(cars, by=list(fit$cluster), FUN = mean)
+
+# Create a new data frame with the cars and fit data
+cluster_cars <- data.frame(cars, fit$cluster)
+```
+
+*** =sample_code
+```{r}
+cluster_cars %>% ggvis(~mpg, ~disp, fill = ~factor(fit.cluster)) %>% group_by(fit.cluster)
+```
+
+*** =sct
+```{r}
+msg_bad <- "That is not correct, guess again."
+msg_success <- "Wonderful! he 4th cluster has the best mileage."
+
+# Pass the correct option (Action, option 2 in the instructions) to correct.
+# Pass the feedback messages, both positive and negative, to feedback_msgs in the appropriate order.
+test_mc(correct = 4, feedback_msgs = c(msg_bad, msg_bad, msg_bad, msg_success, msg_bad)) 
 ```
