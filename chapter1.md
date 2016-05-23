@@ -227,7 +227,7 @@ test_error()
 success_msg("Good work!")
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:36e8b9e8b4
 ##Understanding your cluster.
 
 Take a look at your console, and try running the code.
