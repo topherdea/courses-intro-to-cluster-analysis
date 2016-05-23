@@ -154,7 +154,7 @@ msg_success <- "Exactly! We calculate distance and use that as a measure of diss
 # Pass the feedback messages, both positive and negative, to feedback_msgs in the appropriate order.
 test_mc(correct = 4, feedback_msgs = c(msg_bad, msg_bad, msg_bad, msg_success)) 
 ```
---- type:NormalExercise lang:r xp:100 skills:1 
+--- type:NormalExercise lang:r xp:100 skills:1  key:c0b56cff17
 ## K-Means Cluster
 
 K-Means clustering is one of the most basic, and most used unsupervised algorithims. The main idea is to generate **k** number of clusters, or groups based on a mean center. We want each cluster to be as far from each other as possible. If clustered, we assume that each cluster is different from another. 
