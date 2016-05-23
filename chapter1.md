@@ -251,6 +251,8 @@ Look at the legend and the color of the dots!
 library(ggvis)
 library(dplyr)
 
+set.seed(0)
+
 cars <- mtcars
 
 fit <- kmeans(cars, 5)
