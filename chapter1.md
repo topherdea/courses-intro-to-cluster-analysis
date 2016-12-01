@@ -89,9 +89,7 @@ test_function("str", args = "object",
 test_function("as.matrix", args ="x",
               incorrect_msg = "You didn't call `as.matrix(___)` with the correct object.")
 
-test_function("hclust", args = "d",
-              incorrect_msg = "You didn't call `hclust` with the correct object.")
-
+test_output_contains("h_clust")
 
 
 # Test the objects 
